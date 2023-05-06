@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  a {
+    @apply uppercase text-sm hover:text-primary selection:text-primary;
+  }
+
+  .btn {
+    @apply uppercase p-1.5 text-xs rounded-sm flex justify-center items-center gap-1;
+  }
+
+  .btn-primary {
+    @apply bg-primary;
+  }
+
+  /* keyframes */
+
+  @keyframes menu-animation {
+    0% {
+      transform: rotate(-45deg);
+      opacity: 0;
+    }
+    100% {
+      transform: rotate(0deg);
+      opacity: 1;
+    }
+  }
+
+  .menuAnimation {
+    animation: menu-animation 0.5s normal;
+  }
+}
