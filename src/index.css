@@ -3,16 +3,39 @@
 @tailwind utilities;
 
 @layer components {
+  html {
+    @apply text-[13px] md:text-[14px] lg:text-[15[x]] xl:text-[16px];
+  }
+
   a {
-    @apply uppercase text-sm hover:text-primary selection:text-primary;
+    @apply uppercase text-base hover:text-primary selection:text-primary;
+  }
+
+  p {
+    @apply text-sm;
   }
 
   .btn {
-    @apply uppercase p-1.5 text-xs rounded-sm flex justify-center items-center gap-1;
+    @apply uppercase p-2 text-base rounded-[4px] flex justify-center items-center gap-1;
   }
 
   .btn-primary {
-    @apply bg-primary;
+    @apply bg-primary relative pr-8 hover:bg-opacity-75;
+  }
+
+  .btn-primary > svg {
+    position: absolute;
+    right: 3px;
+  }
+
+  /* classes */
+
+  .padding-1 {
+    @apply px-4 md:px-12 lg:px-36 xl:px-44 2xl:px-56;
+  }
+
+  .padding-2 {
+    @apply py-5 sm:py-10 md:py-14 lg:py-16 xl:py-20 2xl:py-28;
   }
 
   /* keyframes */
@@ -28,7 +51,37 @@
     }
   }
 
+  @keyframes scale {
+    0% {
+      transform: scale(100%);
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      transform: scale(115%);
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadein {
+    0% {
+      opacity: 0%;
+    }
+    100% {
+      opacity: 100%;
+    }
+  }
+
+  .scaleInOut {
+    animation: scale 6s alternate-reverse infinite linear;
+  }
+
   .menuAnimation {
     animation: menu-animation 0.5s normal;
+  }
+
+  .fadeIn {
+    animation: fadein 1s normal alternate;
   }
 }
