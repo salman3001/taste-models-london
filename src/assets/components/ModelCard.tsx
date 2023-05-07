@@ -18,13 +18,17 @@ const ModelCard = (prop: Iprop) => {
           backgroundImage: `url(${prop.img})`,
         }}
       >
-        <div className="bg-black w-full h-full opacity-0 hover:opacity-90 absolute top-0 left-0 transition-opacity duration-500 p-10  space-y-6">
+        <div className="bg-black w-full h-full opacity-0 hover:opacity-90 absolute top-0 left-0 transition-opacity duration-1000 p-10  space-y-6">
           <div className="max-w-xs flex flex-col h-full mx-auto  justify-evenly">
             <div className="space-y-2 ">
-              <h1 className="text-lg">{prop.name}</h1>
-              <p className="text-sm leading-5">{prop.detail}</p>
+              <h1 className="text-lg translate-y-6 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all ease-in-out duration-1000">
+                {prop.name}
+              </h1>
+              <p className="text-sm leading-5 translate-y-6 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all ease-in-out duration-1000 delay-200">
+                {prop.detail}
+              </p>
             </div>
-            <button className="btn btn-primary w-full ">
+            <button className="btn btn-primary w-full translate-y-8 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all ease-in-out duration-1000 delay-400">
               Book Model
               <BsArrowRightShort size={"1.75rem"} />
             </button>
