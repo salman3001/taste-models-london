@@ -1,4 +1,9 @@
 import Rating from "../Rating";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+
+import { Pagination, Autoplay } from "swiper";
 
 export const Section6 = () => {
   return (
@@ -6,10 +11,49 @@ export const Section6 = () => {
       <h1 className="text-4xl font-light max-w-[28.6rem]">
         Lorem Ipsum is simply dummy text of the printing text of the printing
       </h1>
-      <div className=" grid sm:grid-cols-3 padding-2">
-        <Card />
-        <Card />
-        <Card />
+      <div className="padding-2 px-6 pb-40">
+        <Swiper
+          style={{ height: "100%" }}
+          slidesPerView={3}
+          spaceBetween={30}
+          pagination={{
+            clickable: true,
+          }}
+          modules={[Pagination, Autoplay]}
+          className="mySwiper"
+          loop={true}
+          breakpoints={{
+            0: {
+              slidesPerView: 1,
+            },
+            600: {
+              slidesPerView: 2,
+            },
+            992: {
+              slidesPerView: 3,
+            },
+          }}
+          autoplay
+        >
+          <SwiperSlide>
+            <Card />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Card />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Card />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Card />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Card />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Card />
+          </SwiperSlide>
+        </Swiper>
       </div>
     </div>
   );

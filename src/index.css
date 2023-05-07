@@ -38,6 +38,15 @@
     @apply py-5 sm:py-10 md:py-14 lg:py-16 xl:py-20 2xl:py-28;
   }
 
+  /* slider */
+  .swiper-pagination-bullet {
+    background: #ffffff !important;
+  }
+
+  .swiper-pagination-bullet-active {
+    display: none !important;
+  }
+
   /* keyframes */
 
   @keyframes menu-animation {

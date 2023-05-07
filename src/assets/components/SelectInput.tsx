@@ -1,5 +1,6 @@
 import { Dispatch, useState } from "react";
 import { BsChevronDown } from "react-icons/bs";
+import { memo } from "react";
 
 interface Iprop {
   placeholder: string;
@@ -9,7 +10,8 @@ interface Iprop {
   onChange: Dispatch<React.SetStateAction<string>>;
 }
 
-export const SelectInput = (prop: Iprop) => {
+// eslint-disable-next-line react-refresh/only-export-components
+const SelectInput = (prop: Iprop) => {
   const [state, setState] = useState(false);
   console.log(prop.value);
 
@@ -46,7 +48,6 @@ export const SelectInput = (prop: Iprop) => {
             key={index}
             className="cursor-pointer hover:text-primary"
             onClick={(e) => {
-              console.log(e.currentTarget.innerHTML);
               prop.onChange(e.currentTarget.innerHTML);
               setState((state) => !state);
             }}
@@ -58,3 +59,6 @@ export const SelectInput = (prop: Iprop) => {
     </div>
   );
 };
+
+// eslint-disable-next-line react-refresh/only-export-components
+export default memo(SelectInput);
