@@ -24,7 +24,7 @@ const SelectInput = (prop: Iprop) => {
       }}
     >
       <div
-        className="h-12   border-b  cursor-pointer p-3 mb-1 "
+        className="h-12   border-b  cursor-pointer p-3 mb-1 whitespace-nowrap"
         onClick={() => {
           setState((state) => !state);
         }}

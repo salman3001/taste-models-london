@@ -13,7 +13,7 @@ import { useEffect, useState } from "react";
 
 const AboutusSection3 = () => {
   return (
-    <div className="padding-1 padding-2 space-y-16">
+    <div className="padding-1 padding-2 space-y-16 bg-base1">
       <div className=" sm:space-y-5 border-b border-[#21272D]  ">
         <h1 className="text-4xl font-light max-w-[30.7rem]">
           Lorem Ipsum is simply dummy text of the printing
