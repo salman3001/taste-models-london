@@ -87,7 +87,7 @@ const Bullets = () => {
   console.log(activeSlide);
 
   return (
-    <div className="flex justify-center items-center gap-8">
+    <div className="flex justify-center items-center gap-8 mt-6">
       {activeSlide === 0 ? (
         <div className="h-2 w-2 text-3xl leading-[0] font-thin scaleIn">+</div>
       ) : (

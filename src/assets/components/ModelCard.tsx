@@ -1,6 +1,7 @@
 import logo from "../images/Brand-logo.svg";
 import { BsArrowRightShort } from "react-icons/bs";
 import Rating from "./Rating";
+import { useNavigate } from "react-router-dom";
 
 interface Iprop {
   name: string;
@@ -10,6 +11,7 @@ interface Iprop {
 }
 
 const ModelCard = (prop: Iprop) => {
+  const navigate = useNavigate();
   return (
     <div className="relative group h-full w-full space-y-4 ">
       <div
@@ -28,7 +30,12 @@ const ModelCard = (prop: Iprop) => {
                 {prop.detail}
               </p>
             </div>
-            <button className="btn btn-primary w-full translate-y-8 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all ease-in-out duration-1000 delay-400">
+            <button
+              className="btn btn-primary w-full translate-y-8 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all ease-in-out duration-1000 delay-400"
+              onClick={() => {
+                navigate("/models/modeldetail");
+              }}
+            >
               Book Model
               <BsArrowRightShort size={"1.75rem"} />
             </button>

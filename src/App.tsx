@@ -5,6 +5,9 @@ import { NotFound } from "./assets/pages/NotFound";
 import Aboutus from "./assets/pages/Aboutus";
 import Faq from "./assets/pages/Faq";
 import Models from "./assets/pages/Models";
+import ModelDetail from "./assets/pages/ModelDetail";
+import Blogs from "./assets/pages/Blogs";
+import BlogsDetail from "./assets/pages/BlogsDetail";
 
 function App() {
   return (
@@ -13,7 +16,10 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/aboutus" element={<Aboutus />} />
         <Route path="/faq" element={<Faq />} />
+        <Route path="/blogs" element={<Blogs />} />
+        <Route path="/blogs/:blogId" element={<BlogsDetail />} />
         <Route path="/models" element={<Models />} />
+        <Route path="/models/:modelId" element={<ModelDetail />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
