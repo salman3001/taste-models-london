@@ -2,8 +2,10 @@ import Rating from "../Rating";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-
-import { Pagination, Autoplay } from "swiper";
+import { useSwiper } from "swiper/react";
+import { useEffect, useState } from "react";
+import { Autoplay } from "swiper";
+import { BsArrowRightShort } from "react-icons/bs";
 
 export const Section6 = () => {
   return (
@@ -11,15 +13,12 @@ export const Section6 = () => {
       <h1 className="text-4xl font-light max-w-[28.6rem]">
         Lorem Ipsum is simply dummy text of the printing text of the printing
       </h1>
-      <div className="padding-2 px-6 pb-40">
+      <div className="padding-2 px-6 ">
         <Swiper
           style={{ height: "100%" }}
           slidesPerView={3}
           spaceBetween={30}
-          pagination={{
-            clickable: true,
-          }}
-          modules={[Pagination, Autoplay]}
+          modules={[Autoplay]}
           className="mySwiper"
           loop={true}
           breakpoints={{
@@ -33,7 +32,7 @@ export const Section6 = () => {
               slidesPerView: 3,
             },
           }}
-          autoplay
+          autoplay={{ disableOnInteraction: false }}
         >
           <SwiperSlide>
             <Card />
@@ -53,6 +52,8 @@ export const Section6 = () => {
           <SwiperSlide>
             <Card />
           </SwiperSlide>
+
+          <Bullets />
         </Swiper>
       </div>
     </div>
@@ -69,6 +70,62 @@ const Card = () => {
         industry. Lorem Ipsum has been
       </p>
       <p className="uppercase text-primary">Lorem Ipsum</p>
+    </div>
+  );
+};
+
+const Bullets = () => {
+  const swiper = useSwiper();
+  const [activeSlide, setActiveSlide] = useState(0);
+
+  useEffect(() => {
+    swiper.on("slideChange", (swip) => {
+      setActiveSlide(swip.realIndex);
+    });
+  }, [swiper]);
+
+  console.log(activeSlide);
+
+  return (
+    <div className="flex justify-center items-center gap-8">
+      {activeSlide === 0 ? (
+        <div className="h-2 w-2 text-3xl leading-[0] font-thin scaleIn">+</div>
+      ) : (
+        <div className="h-1.5 w-1 bg-white rounded-full cursor-not-allowed "></div>
+      )}
+      {activeSlide === 1 ? (
+        <div className="h-2 w-2 text-3xl leading-[0] font-thin scaleIn">+</div>
+      ) : (
+        <div className="h-1.5 w-1 bg-white rounded-full cursor-not-allowed "></div>
+      )}
+      {activeSlide === 2 ? (
+        <div className="h-2 w-2 text-3xl leading-[0] font-thin scaleIn">+</div>
+      ) : (
+        <div className="h-1.5 w-1 bg-white rounded-full cursor-not-allowed "></div>
+      )}
+      {activeSlide === 3 ? (
+        <div className="h-2 w-2 text-3xl leading-[0] font-thin scaleIn">+</div>
+      ) : (
+        <div className="h-1.5 w-1 bg-white rounded-full cursor-not-allowed "></div>
+      )}
+      {activeSlide === 4 ? (
+        <div className="h-2 w-2 text-3xl leading-[0] font-thin scaleIn">+</div>
+      ) : (
+        <div className="h-1.5 w-1 bg-white rounded-full cursor-not-allowed "></div>
+      )}
+      {activeSlide === 5 ? (
+        <div className="h-2 w-2 text-3xl leading-[0] font-thin scaleIn">+</div>
+      ) : (
+        <div className="h-1.5 w-1 bg-white rounded-full cursor-not-allowed "></div>
+      )}
+      <div
+        className="cursor-pointer"
+        onClick={() => {
+          swiper.slideNext();
+        }}
+      >
+        <BsArrowRightShort size={22} color="#BFA37C" />
+      </div>
     </div>
   );
 };

@@ -91,12 +91,21 @@
     }
   }
 
+  @keyframes scaleIn {
+    0% {
+      transform: scale(70%);
+    }
+    100% {
+      transform: scale(100%);
+    }
+  }
+
   .scaleInOut {
     animation: scale 6s alternate-reverse infinite linear;
   }
 
   .menuAnimation {
-    animation: menu-animation 0.5s normal;
+    animation: menu-animation 0.3s normal;
   }
 
   .fadeIn {
@@ -105,5 +114,9 @@
 
   .animate-heightZeroToFull {
     animation: heightZeroToFull 1s;
+  }
+
+  .scaleIn {
+    animation: scaleIn 0.5s;
   }
 }

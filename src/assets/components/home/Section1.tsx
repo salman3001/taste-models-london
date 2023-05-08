@@ -28,7 +28,7 @@ const Section1 = () => {
 
   return (
     <div className="relative h-[70vh] sm:h-[90vh] w-full overflow-hidden text-white">
-      <div className="absolute z-20 padding-1 padding-2 text-5xl w-full h-full flex flex-col justify-end pb-48 gap-4">
+      <div className="absolute z-20 padding-1 padding-2 text-5xl w-full h-full flex flex-col justify-end pb-48 gap-10">
         <h1 className="max-w-lg font-semibold">
           Lorem Ipsum is simply dummy text
         </h1>
@@ -36,7 +36,6 @@ const Section1 = () => {
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry.
         </p>
-        //
         <Form />
       </div>
       <div
