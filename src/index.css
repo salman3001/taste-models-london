@@ -4,7 +4,7 @@
 
 @layer components {
   html {
-    @apply text-[13px] md:text-[14px] lg:text-[15[x]] xl:text-[16px];
+    @apply text-[13px] md:text-[14px] lg:text-[15[x]] xl:text-[16px] scroll-smooth;
   }
 
   a {
@@ -45,6 +45,16 @@
 
   .swiper-pagination-bullet-active {
     display: none !important;
+  }
+
+  /* circular scroll progress */
+
+  .CircularProgressbar .CircularProgressbar-trail {
+    stroke: gray !important;
+  }
+
+  .CircularProgressbar .CircularProgressbar-path {
+    stroke: #bfa37c !important;
   }
 
   /* keyframes */
