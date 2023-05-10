@@ -6,25 +6,70 @@ import carolina4 from "../../images/carolina-4.png";
 import carolina5 from "../../images/carolina-5.png";
 import Rating from "../Rating";
 import Badge from "../Badge";
+import LightBox from "../LightBox";
+import { useState } from "react";
 
 const ModelDetailSection1 = () => {
+  const [lightbox, setLightbox] = useState(false);
+  const [lightboxurl, setLightboxurl] = useState("");
+
+  const togelLightBox = (url: string) => {
+    setLightbox((state) => !state);
+    setLightboxurl(url);
+  };
+
   return (
-    <div className="padding-1 padding-2 pt-10 grid md:grid-cols-2 gap-8">
-      <div className="grid grid-cols-2 gap-4">
+    <div className=" padding-1 padding-2 pt-10 grid md:grid-cols-2 gap-8">
+      <div className="grid grid-cols-2 gap-4 place-items-center">
         <div>
-          <img src={carolina1} alt="" />
+          <img
+            src={carolina1}
+            alt=""
+            className="cursor-pointer"
+            onClick={() => {
+              togelLightBox(carolina1);
+            }}
+          />
         </div>
         <div>
-          <img src={carolina2} alt="" />
+          <img
+            src={carolina2}
+            alt=""
+            className="cursor-pointer"
+            onClick={() => {
+              togelLightBox(carolina2);
+            }}
+          />
         </div>
         <div>
-          <img src={carolina3} alt="" />
+          <img
+            src={carolina3}
+            alt=""
+            className="cursor-pointer"
+            onClick={() => {
+              togelLightBox(carolina3);
+            }}
+          />
         </div>
         <div>
-          <img src={carolina4} alt="" />
+          <img
+            src={carolina4}
+            alt=""
+            className="cursor-pointer"
+            onClick={() => {
+              togelLightBox(carolina4);
+            }}
+          />
         </div>
         <div className="col-span-2">
-          <img src={carolina5} alt="" />
+          <img
+            src={carolina5}
+            alt=""
+            className="cursor-pointer"
+            onClick={() => {
+              togelLightBox(carolina5);
+            }}
+          />
         </div>
       </div>
       <div className="space-y-6">
@@ -125,6 +170,11 @@ const ModelDetailSection1 = () => {
           <div className="w-full border-b border-[#21272D]"></div>
         </div>
       </div>
+      <LightBox
+        open={lightbox}
+        url={lightboxurl}
+        togelFunction={togelLightBox}
+      />
     </div>
   );
 };

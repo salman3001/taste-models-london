@@ -15,6 +15,11 @@
     @apply text-sm;
   }
 
+  option:checked,
+  option:hover {
+    box-shadow: 0 0 10px 100px #1882a8 inset;
+  }
+
   .btn {
     @apply uppercase p-2 text-base rounded-[4px] flex justify-center items-center gap-1;
   }

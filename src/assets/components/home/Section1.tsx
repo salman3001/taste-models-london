@@ -36,7 +36,44 @@ const Section1 = () => {
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry.
         </p>
-        <Form />
+        <div className="grid grid-cols-2 sm:grid-cols-4 w-full gap-10">
+          <SelectInput
+            option={[
+              { title: "Model 1", value: "model1" },
+              { title: "Model 2", value: "model2" },
+              { title: "Model 3", value: "model3" },
+            ]}
+            name="ModelType"
+            placeholder="Model Type"
+          />
+          <SelectInput
+            option={[
+              { title: "American", value: "American" },
+              { title: "French", value: "French" },
+              { title: "Canadian", value: "Canadian" },
+            ]}
+            name="Nationality"
+            placeholder="Nationality"
+          />
+          <SelectInput
+            option={[
+              { title: "Modeling", value: "Modeling" },
+              { title: "Photo Shoot", value: "Photoshoot" },
+              { title: "Video Shoot", value: "Videoshoot" },
+            ]}
+            name="Service"
+            placeholder="Service"
+          />
+          <SelectInput
+            option={[
+              { title: "English", value: "English" },
+              { title: "French", value: "French" },
+              { title: "Russian", value: "Russian" },
+            ]}
+            name="language"
+            placeholder="Language Spoken"
+          />
+        </div>
       </div>
       <div
         className="h-[70vh]  sm:h-[90vh] w-full bg-cover bg-no-repeat brightness-[.3]  scaleInOut"
