@@ -10,7 +10,7 @@ import { BsArrowRightShort } from "react-icons/bs";
 export const Section6 = () => {
   return (
     <div className="padding-1 padding-2 w-full">
-      <h1 className="text-4xl font-light max-w-[28.6rem]">
+      <h1 className="text-4xl font-light max-w-[30.6rem]">
         Lorem Ipsum is simply dummy text of the printing text of the printing
       </h1>
       <div className="padding-2 px-6 ">
@@ -20,7 +20,6 @@ export const Section6 = () => {
           spaceBetween={30}
           modules={[Autoplay]}
           className="mySwiper"
-          loop={true}
           breakpoints={{
             0: {
               slidesPerView: 1,
@@ -80,52 +79,84 @@ const Bullets = () => {
 
   useEffect(() => {
     swiper.on("slideChange", (swip) => {
-      setActiveSlide(swip.realIndex);
+      setActiveSlide(swip.activeIndex);
     });
   }, [swiper]);
 
-  console.log(activeSlide);
-
   return (
-    <div className="flex justify-center items-center gap-8 mt-6">
+    <div className="flex justify-center items-center gap-8 mt-6 h-4">
       {activeSlide === 0 ? (
-        <div className="h-2 w-2 text-3xl leading-[0] font-thin scaleIn">+</div>
+        <div className="h-2 w-2 text-3xl leading-[.4rem] font-thin scaleIn">
+          +
+        </div>
       ) : (
-        <div className="h-1.5 w-1 bg-white rounded-full cursor-not-allowed "></div>
+        <div
+          className="h-1.5 w-1 bg-white rounded-full  cursor-pointer "
+          onClick={() => {
+            swiper.slideTo(0);
+          }}
+        ></div>
       )}
       {activeSlide === 1 ? (
-        <div className="h-2 w-2 text-3xl leading-[0] font-thin scaleIn">+</div>
+        <div className="h-2 w-2 text-3xl leading-[.4rem] font-thin scaleIn">
+          +
+        </div>
       ) : (
-        <div className="h-1.5 w-1 bg-white rounded-full cursor-not-allowed "></div>
+        <div
+          className="h-1.5 w-1 bg-white rounded-full cursor-pointer "
+          onClick={() => {
+            swiper.slideTo(1);
+          }}
+        ></div>
       )}
       {activeSlide === 2 ? (
-        <div className="h-2 w-2 text-3xl leading-[0] font-thin scaleIn">+</div>
+        <div className="h-2 w-2 text-3xl leading-[.4rem] font-thin scaleIn">
+          +
+        </div>
       ) : (
-        <div className="h-1.5 w-1 bg-white rounded-full cursor-not-allowed "></div>
+        <div
+          className="h-1.5 w-1 bg-white rounded-full cursor-pointer "
+          onClick={() => {
+            swiper.slideTo(2);
+          }}
+        ></div>
       )}
       {activeSlide === 3 ? (
-        <div className="h-2 w-2 text-3xl leading-[0] font-thin scaleIn">+</div>
+        <div className="h-2 w-2 text-3xl leading-[.4rem] font-thin scaleIn">
+          +
+        </div>
       ) : (
-        <div className="h-1.5 w-1 bg-white rounded-full cursor-not-allowed "></div>
+        <div
+          className="h-1.5 w-1 bg-white rounded-full cursor-pointer "
+          onClick={() => {
+            swiper.slideTo(3);
+          }}
+        ></div>
       )}
       {activeSlide === 4 ? (
-        <div className="h-2 w-2 text-3xl leading-[0] font-thin scaleIn">+</div>
+        <div className="h-2 w-2 text-3xl leading-[.4rem] font-thin scaleIn">
+          +
+        </div>
       ) : (
-        <div className="h-1.5 w-1 bg-white rounded-full cursor-not-allowed "></div>
+        <div
+          className="h-1.5 w-1 bg-white rounded-full cursor-pointer "
+          onClick={() => {
+            swiper.slideTo(4);
+          }}
+        ></div>
       )}
       {activeSlide === 5 ? (
-        <div className="h-2 w-2 text-3xl leading-[0] font-thin scaleIn">+</div>
+        <div className="h-2 w-2 text-3xl leading-[.4rem] font-thin scaleIn">
+          +
+        </div>
       ) : (
-        <div className="h-1.5 w-1 bg-white rounded-full cursor-not-allowed "></div>
+        <div
+          className="h-1.5 w-1 bg-white rounded-full cursor-pointer "
+          onClick={() => {
+            swiper.slideTo(5);
+          }}
+        ></div>
       )}
-      <div
-        className="cursor-pointer"
-        onClick={() => {
-          swiper.slideNext();
-        }}
-      >
-        <BsArrowRightShort size={22} color="#BFA37C" />
-      </div>
     </div>
   );
 };

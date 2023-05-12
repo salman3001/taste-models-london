@@ -28,8 +28,8 @@ const Section1 = () => {
 
   return (
     <div className="relative h-[70vh] sm:h-[90vh] w-full overflow-hidden text-white">
-      <div className="absolute z-20 padding-1 padding-2 text-5xl w-full h-full flex flex-col justify-end pb-48 gap-10">
-        <h1 className="max-w-lg font-semibold">
+      <div className="absolute z-20 padding-1 padding-2 text-5xl w-full h-full flex flex-col justify-end pb-16 sm:pb-32 2xl:pb-48 gap-10">
+        <h1 className="max-w-lg font-medium">
           Lorem Ipsum is simply dummy text
         </h1>
         <p className="max-w-lg text-lg">
@@ -87,43 +87,3 @@ const Section1 = () => {
 };
 
 export default Section1;
-
-const Form = memo(() => {
-  const [modelType, setModelType] = useState("");
-  const [nationality, setNationality] = useState("");
-  const [service, setService] = useState("");
-  const [language, setLanguage] = useState("");
-
-  return (
-    <div className="grid grid-cols-2 sm:grid-cols-4 w-full gap-10">
-      <SelectInput
-        tabindex={0}
-        value={modelType}
-        onChange={setModelType}
-        placeholder="Model Type"
-        options={["Model1", "Model2", "Model3"]}
-      />
-      <SelectInput
-        tabindex={0}
-        value={nationality}
-        onChange={setNationality}
-        placeholder={"Nationality"}
-        options={["American", "Russian", "France"]}
-      />
-      <SelectInput
-        tabindex={0}
-        value={service}
-        onChange={setService}
-        placeholder={"Service"}
-        options={["Modeling", "Photoshoot", "Videoshoot"]}
-      />
-      <SelectInput
-        tabindex={0}
-        value={language}
-        onChange={setLanguage}
-        placeholder={"Language Spoken"}
-        options={["English", "Russian", "French"]}
-      />
-    </div>
-  );
-});

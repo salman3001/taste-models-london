@@ -21,7 +21,7 @@ const Navbar = () => {
             }}
           />
         </div>
-        <div className="hidden md:flex items-center gap-5 lg:gap-16 ">
+        <div className="hidden md:flex items-center gap-10  lg:gap-16 ">
           <a
             href=""
             className="[&[href='/models']]:text-primary"
@@ -31,16 +31,6 @@ const Navbar = () => {
             }}
           >
             Models
-          </a>
-          <a
-            href=""
-            className="[&[href='/members']]:text-primary"
-            onClick={(e) => {
-              e.preventDefault();
-              navigate("/members");
-            }}
-          >
-            Members
           </a>
           <a
             href=""
@@ -71,16 +61,6 @@ const Navbar = () => {
             }}
           >
             Faq
-          </a>
-          <a
-            href=""
-            className="[&[href='/contactus']]:text-primary"
-            onClick={(e) => {
-              e.preventDefault();
-              navigate("/cotactus");
-            }}
-          >
-            Contact us
           </a>
           <button
             className="btn btn-primary"
@@ -129,17 +109,7 @@ const Navbar = () => {
           >
             Models
           </a>
-          <a
-            href=""
-            className="[&[href='/members']]:text-primary"
-            onClick={(e) => {
-              e.preventDefault();
-              navigate("/members");
-              setMenuState(false);
-            }}
-          >
-            Members
-          </a>
+
           <a
             href=""
             className="[&[href='/aboutus']]:text-primary"
@@ -172,17 +142,6 @@ const Navbar = () => {
             }}
           >
             Faq
-          </a>
-          <a
-            href=""
-            className="[&[href='/contactus']]:text-primary"
-            onClick={(e) => {
-              e.preventDefault();
-              navigate("/contactus");
-              setMenuState(false);
-            }}
-          >
-            Contact us
           </a>
           <button
             className="btn btn-primary"
