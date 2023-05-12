@@ -21,7 +21,7 @@ const Navbar = () => {
             }}
           />
         </div>
-        <div className="hidden md:flex items-center gap-10  lg:gap-16 ">
+        <div className="hidden md:flex items-center gap-10 lg:gap-16 ">
           <a
             href=""
             className="[&[href='/models']]:text-primary"
