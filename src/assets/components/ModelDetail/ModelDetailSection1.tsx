@@ -6,16 +6,19 @@ import carolina4 from "../../images/carolina-4.png";
 import carolina5 from "../../images/carolina-5.png";
 import Rating from "../Rating";
 import Badge from "../Badge";
-import LightBox from "../LightBox";
 import { useState } from "react";
+import Lightbox from "yet-another-react-lightbox";
+import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
+import Zoom from "yet-another-react-lightbox/plugins/zoom";
+import "yet-another-react-lightbox/styles.css";
+import "yet-another-react-lightbox/plugins/thumbnails.css";
 
 const ModelDetailSection1 = () => {
   const [lightbox, setLightbox] = useState(false);
-  const [lightboxurl, setLightboxurl] = useState("");
+  const [defaultImage, setDefaultImage] = useState(0);
 
-  const togelLightBox = (url: string) => {
+  const togelLightBox = () => {
     setLightbox((state) => !state);
-    setLightboxurl(url);
   };
 
   return (
@@ -27,7 +30,8 @@ const ModelDetailSection1 = () => {
             alt=""
             className="cursor-pointer "
             onClick={() => {
-              togelLightBox(carolina1);
+              setDefaultImage(0);
+              togelLightBox();
             }}
           />
         </div>
@@ -37,7 +41,8 @@ const ModelDetailSection1 = () => {
             alt=""
             className="cursor-pointer "
             onClick={() => {
-              togelLightBox(carolina2);
+              setDefaultImage(1);
+              togelLightBox();
             }}
           />
         </div>
@@ -47,7 +52,8 @@ const ModelDetailSection1 = () => {
             alt=""
             className="cursor-pointer "
             onClick={() => {
-              togelLightBox(carolina3);
+              setDefaultImage(2);
+              togelLightBox();
             }}
           />
         </div>
@@ -57,7 +63,8 @@ const ModelDetailSection1 = () => {
             alt=""
             className="cursor-pointer  flex"
             onClick={() => {
-              togelLightBox(carolina4);
+              setDefaultImage(3);
+              togelLightBox();
             }}
           />
         </div>
@@ -67,7 +74,8 @@ const ModelDetailSection1 = () => {
             alt=""
             className="cursor-pointer "
             onClick={() => {
-              togelLightBox(carolina5);
+              setDefaultImage(4);
+              togelLightBox();
             }}
           />
         </div>
@@ -170,10 +178,18 @@ const ModelDetailSection1 = () => {
           <div className="w-full border-b border-[#21272D]"></div>
         </div>
       </div>
-      <LightBox
+      <Lightbox
+        plugins={[Thumbnails, Zoom]}
         open={lightbox}
-        url={lightboxurl}
-        togelFunction={togelLightBox}
+        index={defaultImage}
+        close={() => setLightbox(false)}
+        slides={[
+          { src: carolina1 },
+          { src: carolina2 },
+          { src: carolina3 },
+          { src: carolina4 },
+          { src: carolina5 },
+        ]}
       />
     </div>
   );

@@ -8,7 +8,7 @@ const Section2 = () => {
   return (
     <div className="padding-1 padding-2 space-y-20">
       <div className="grid sm:grid-cols-2 gap-6 lg:gap-20 xl:gap-32">
-        <h1 className="text-4xl font-thin max-w-[30rem]">
+        <h1 className="text-4xl  max-w-[35rem]">
           Lorem Ipsum is simply dummy text of the printing text of the printing
         </h1>
         <div className="flex flex-col gap-8 ">

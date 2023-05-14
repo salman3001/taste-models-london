@@ -3,8 +3,29 @@ import SelectInput from "../components/SelectInput";
 import model1 from "../images/model-1.png";
 import model2 from "../images/model-2.png";
 import model3 from "../images/model-3.png";
+import { useFormik } from "formik";
+import * as Yup from "yup";
 
 const Models = () => {
+  const formik = useFormik({
+    initialValues: {
+      modelType: "",
+      nationality: "",
+      service: "",
+      language: "",
+    },
+    validationSchema: Yup.object({
+      modelType: Yup.string().required("Required"),
+      nationality: Yup.string().required("Required"),
+      service: Yup.string().required("Required"),
+      language: Yup.string().required("Required"),
+    }),
+    onSubmit: (values) => {
+      alert(
+        values.language + values.modelType + values.nationality + values.service
+      );
+    },
+  });
   return (
     <div className="z-20 padding-1 padding-2">
       <div className=" text-5xl w-full h-full flex flex-col justify-end  gap-10 pb-4">
@@ -13,43 +34,67 @@ const Models = () => {
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry.
         </p>
-        <div className="w-full  lg:w-[90%] 2xl:w-[80%] self-end">
+        <div className="w-full">
           <div className="grid grid-cols-2 sm:grid-cols-4 w-full gap-10">
             <SelectInput
-              option={[
-                { title: "Model 1", value: "model1" },
-                { title: "Model 2", value: "model2" },
-                { title: "Model 3", value: "model3" },
-              ]}
-              name="ModelType"
+              setField={formik.setFieldValue}
+              value={formik.values.modelType}
               placeholder="Model Type"
+              name="modelType"
+              options={[
+                "Model 1",
+                "Model 2",
+                "Model 3",
+                "Model 4",
+                "Model 5",
+                "Model 6",
+                "Model 7",
+              ]}
+              tabindex={0}
             />
             <SelectInput
-              option={[
-                { title: "American", value: "American" },
-                { title: "French", value: "French" },
-                { title: "Canadian", value: "Canadian" },
-              ]}
-              name="Nationality"
+              setField={formik.setFieldValue}
+              value={formik.values.nationality}
+              name="nationality"
               placeholder="Nationality"
+              options={[
+                "American",
+                "Russian",
+                "France",
+                "British",
+                "Spanish",
+                "Indian",
+                "Middle East",
+              ]}
+              tabindex={0}
             />
             <SelectInput
-              option={[
-                { title: "Modeling", value: "Modeling" },
-                { title: "Photo Shoot", value: "Photoshoot" },
-                { title: "Video Shoot", value: "Videoshoot" },
+              setField={formik.setFieldValue}
+              value={formik.values.service}
+              name="service"
+              placeholder="Service Type"
+              options={[
+                "Service 1",
+                "Service 2",
+                "Service 3",
+                "Service 4",
+                "Service 5",
               ]}
-              name="Service"
-              placeholder="Service"
+              tabindex={0}
             />
             <SelectInput
-              option={[
-                { title: "English", value: "English" },
-                { title: "French", value: "French" },
-                { title: "Russian", value: "Russian" },
-              ]}
+              setField={formik.setFieldValue}
+              value={formik.values.language}
               name="language"
-              placeholder="Language Spoken"
+              placeholder="Language"
+              options={[
+                "Language 1",
+                "Language 2",
+                "Language 3",
+                "Language 4",
+                "Language 5",
+              ]}
+              tabindex={0}
             />
           </div>
         </div>

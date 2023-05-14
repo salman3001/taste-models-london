@@ -1,4 +1,3 @@
-import React from "react";
 import Accordian from "../Accordian";
 
 const AboutUsSection5 = (prop: { bg: string }) => {
@@ -9,7 +8,7 @@ const AboutUsSection5 = (prop: { bg: string }) => {
         <p className="uppercase text-primary">Lorem Ipsum</p>
       </div>
       <div className="flex justify-end pt-6 md:pt-16">
-        <div className="w-full md:w-[70%]">
+        <div className="w-full md:w-[70%] space-y-6">
           <Accordian
             title="Do You Rent To International Visitors?"
             detail="Viverra accumsan in nisl scelerisque nisi. At risus viverra adipiscing at in tellus. Integer neq ualiquam vestibulum en morbi blandit cursi us risus ultrices ataugue ut lectus arcu sed done."

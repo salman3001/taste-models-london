@@ -14,13 +14,10 @@ const BlogCard = () => {
         <img src={blogimg} alt="" className="w-full" />
       </div>
       <p className="uppercase text-primary">Lorem Ipsum</p>
-      <p className="text-3xl ">
-        Lorem Ipsum is simply dummy text simply dummy text
-      </p>
+      <p className="text-3xl ">Lorem Ipsum is simply dummy text</p>
       <p className="">
         At vero eos et accusamus et iusto odio dignissimos ducimus qui
-        blanditiis praesentium voluptatum deleniti atque corrupti quos dolores
-        et quas molestias excepturi sint occaecati cupiditate non provident
+        blanditiis praesentium voluptatum deleniti atque corrupti quos
       </p>
     </div>
   );

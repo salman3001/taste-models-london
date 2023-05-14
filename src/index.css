@@ -5,22 +5,60 @@
 @layer components {
   html {
     @apply text-[13px] md:text-[14px] lg:text-[15[x]] xl:text-[16px] scroll-smooth;
-    font-family: "Cardo", serif;
+    font-family: "Epilogue", serif;
   }
 
-  body::-webkit-scrollbar {
-    width: 11px;
-  }
   body {
-    scrollbar-width: thin;
-    scrollbar-color: red green;
-  }
-  body::-webkit-scrollbar-track {
     background: #141a1c;
   }
-  body::-webkit-scrollbar-thumb {
+
+  /* scrollbar */
+
+  ::-webkit-scrollbar {
+    width: 8px;
+    left: -100px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #141a1c;
+    margin: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
     background-color: #bfa37c;
+    border: solid 3px #141a1c;
     border-radius: 6px;
+  }
+
+  /* calender */
+
+  ::-webkit-datetime-edit {
+    color: transparent;
+  }
+
+  ::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+  }
+
+  /* input reset */
+
+  input:focus {
+    outline: none !important;
+  }
+
+  /* Chrome,
+  Safari,
+  Edge,
+  Opera */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  input[type="number"] {
+    -moz-appearance: textfield;
   }
 
   a {

@@ -5,28 +5,11 @@ import girl3 from "../../images/girl-slide-3.png";
 import SelectInput from "../../components/SelectInput";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import { BsArrowRightShort } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
 
 const Section1 = () => {
   const [step, setStep] = useState(girl1);
-  const formik = useFormik({
-    initialValues: {
-      modelType: "",
-      nationality: "",
-      service: "",
-      language: "",
-    },
-    validationSchema: Yup.object({
-      modelType: Yup.string().required("Required"),
-      nationality: Yup.string().required("Required"),
-      service: Yup.string().required("Required"),
-      language: Yup.string().required("Required"),
-    }),
-    onSubmit: (values) => {
-      alert(
-        values.language + values.modelType + values.nationality + values.service
-      );
-    },
-  });
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -49,7 +32,7 @@ const Section1 = () => {
 
   return (
     <div className="relative h-[70vh] sm:h-[90vh] w-full  text-white">
-      <div className="absolute z-20 padding-1 padding-2 text-5xl w-full h-full flex flex-col justify-end pb-16 sm:pb-32 2xl:pb-48 gap-10">
+      <div className="absolute z-20 padding-1 padding-2 text-5xl w-full h-full flex flex-col justify-end pb-8 sm:pb-28 gap-10">
         <h1 className="max-w-lg font-medium">
           Lorem Ipsum is simply dummy text
         </h1>
@@ -57,50 +40,7 @@ const Section1 = () => {
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry.
         </p>
-        <div className="grid grid-cols-2 sm:grid-cols-4 w-full gap-10">
-          <SelectInput
-            setField={formik.setFieldValue}
-            value={formik.values.modelType}
-            placeholder="Model Type"
-            options={[
-              "Model 1",
-              "Model 2",
-              "Model 3",
-              "Model 4",
-              "Model 5",
-              "Model 6",
-              "Model 7",
-            ]}
-            tabindex={0}
-          />
-          {/* <SelectInput
-            option={[
-              { title: "American", value: "American" },
-              { title: "French", value: "French" },
-              { title: "Canadian", value: "Canadian" },
-            ]}
-            name="Nationality"
-            placeholder="Nationality"
-          />
-          <SelectInput
-            option={[
-              { title: "Modeling", value: "Modeling" },
-              { title: "Photo Shoot", value: "Photoshoot" },
-              { title: "Video Shoot", value: "Videoshoot" },
-            ]}
-            name="Service"
-            placeholder="Service"
-          />
-          <SelectInput
-            option={[
-              { title: "English", value: "English" },
-              { title: "French", value: "French" },
-              { title: "Russian", value: "Russian" },
-            ]}
-            name="language"
-            placeholder="Language Spoken"
-          /> */}
-        </div>
+        <Form />
       </div>
       <div className="overflow-hidden">
         <div
@@ -116,3 +56,118 @@ const Section1 = () => {
 };
 
 export default Section1;
+
+const Form = memo(() => {
+  const navigate = useNavigate();
+  const formik = useFormik({
+    initialValues: {
+      modelType: "",
+      nationality: "",
+      service: "",
+      language: "",
+    },
+    validationSchema: Yup.object({
+      modelType: Yup.string().min(1, "required").required("Required"),
+      nationality: Yup.string().required("Required"),
+      service: Yup.string().required("Required"),
+      language: Yup.string().required("Required"),
+    }),
+    onSubmit: (values) => {
+      if (!formik.isValid) {
+        alert("All Fields are required");
+      } else {
+        navigate({
+          pathname: "/models",
+          search: `modelType=${values.modelType}&nationality=${values.nationality}&service=${values.service}&languange=${values.language}`,
+        });
+      }
+    },
+  });
+
+  useEffect(() => {
+    formik.validateForm();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  console.log(formik.isValid);
+  console.log(formik.errors);
+
+  return (
+    <>
+      <div className="grid grid-cols-2 sm:grid-cols-4 w-full gap-10 uppercase">
+        <SelectInput
+          setField={formik.setFieldValue}
+          value={formik.values.modelType}
+          placeholder="Model Type"
+          name="modelType"
+          options={[
+            "Model 1",
+            "Model 2",
+            "Model 3",
+            "Model 4",
+            "Model 5",
+            "Model 6",
+            "Model 7",
+          ]}
+          tabindex={0}
+        />
+        <SelectInput
+          setField={formik.setFieldValue}
+          value={formik.values.nationality}
+          name="nationality"
+          placeholder="Nationality"
+          options={[
+            "American",
+            "Russian",
+            "France",
+            "British",
+            "Spanish",
+            "Indian",
+            "Middle East",
+          ]}
+          tabindex={0}
+        />
+        <SelectInput
+          setField={formik.setFieldValue}
+          value={formik.values.service}
+          name="service"
+          placeholder="Service Type"
+          options={[
+            "Service 1",
+            "Service 2",
+            "Service 3",
+            "Service 4",
+            "Service 5",
+          ]}
+          tabindex={0}
+        />
+        <SelectInput
+          setField={formik.setFieldValue}
+          value={formik.values.language}
+          name="language"
+          placeholder="Language"
+          options={[
+            "Language 1",
+            "Language 2",
+            "Language 3",
+            "Language 4",
+            "Language 5",
+          ]}
+          tabindex={0}
+        />
+      </div>
+      <div className="flex w-full justify-end min-h-[4rem]">
+        <button
+          className={`btn  btn-primary w-full sm:w-48 self-end transition-opacity duration-1000 ${
+            formik.isValid ? "flex opacity-100 " : "opacity-0 hidden"
+          } `}
+          onClick={() => {
+            formik.handleSubmit();
+          }}
+        >
+          Find Models <BsArrowRightShort size={"1.75rem"} />
+        </button>
+      </div>
+    </>
+  );
+});
