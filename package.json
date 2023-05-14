@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@types/react-icons": "^3.0.0",
+    "formik": "^2.2.9",
     "gh-pages": "^5.0.0",
     "react": "^18.2.0",
     "react-circular-progressbar": "^2.1.0",
@@ -21,7 +22,8 @@
     "react-intersection-observer": "^9.4.3",
     "react-router-dom": "^6.11.1",
     "react-scroll-percentage-hook": "^1.2.1",
-    "swiper": "^9.2.4"
+    "swiper": "^9.2.4",
+    "yup": "^1.1.1"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",

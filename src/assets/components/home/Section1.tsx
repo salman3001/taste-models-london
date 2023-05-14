@@ -3,9 +3,30 @@ import girl1 from "../../images/girl-slide-1.png";
 import girl2 from "../../images/girl-slide-2.png";
 import girl3 from "../../images/girl-slide-3.png";
 import SelectInput from "../../components/SelectInput";
+import { useFormik } from "formik";
+import * as Yup from "yup";
 
 const Section1 = () => {
   const [step, setStep] = useState(girl1);
+  const formik = useFormik({
+    initialValues: {
+      modelType: "",
+      nationality: "",
+      service: "",
+      language: "",
+    },
+    validationSchema: Yup.object({
+      modelType: Yup.string().required("Required"),
+      nationality: Yup.string().required("Required"),
+      service: Yup.string().required("Required"),
+      language: Yup.string().required("Required"),
+    }),
+    onSubmit: (values) => {
+      alert(
+        values.language + values.modelType + values.nationality + values.service
+      );
+    },
+  });
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -27,7 +48,7 @@ const Section1 = () => {
   }, []);
 
   return (
-    <div className="relative h-[70vh] sm:h-[90vh] w-full overflow-hidden text-white">
+    <div className="relative h-[70vh] sm:h-[90vh] w-full  text-white">
       <div className="absolute z-20 padding-1 padding-2 text-5xl w-full h-full flex flex-col justify-end pb-16 sm:pb-32 2xl:pb-48 gap-10">
         <h1 className="max-w-lg font-medium">
           Lorem Ipsum is simply dummy text
@@ -38,15 +59,21 @@ const Section1 = () => {
         </p>
         <div className="grid grid-cols-2 sm:grid-cols-4 w-full gap-10">
           <SelectInput
-            option={[
-              { title: "Model 1", value: "model1" },
-              { title: "Model 2", value: "model2" },
-              { title: "Model 3", value: "model3" },
-            ]}
-            name="ModelType"
+            setField={formik.setFieldValue}
+            value={formik.values.modelType}
             placeholder="Model Type"
+            options={[
+              "Model 1",
+              "Model 2",
+              "Model 3",
+              "Model 4",
+              "Model 5",
+              "Model 6",
+              "Model 7",
+            ]}
+            tabindex={0}
           />
-          <SelectInput
+          {/* <SelectInput
             option={[
               { title: "American", value: "American" },
               { title: "French", value: "French" },
@@ -72,16 +99,18 @@ const Section1 = () => {
             ]}
             name="language"
             placeholder="Language Spoken"
-          />
+          /> */}
         </div>
       </div>
-      <div
-        className="h-[70vh]  sm:h-[90vh] w-full bg-cover bg-no-repeat brightness-[.3]  scaleInOut"
-        style={{
-          backgroundImage: `url(${step})`,
-          backgroundPosition: "center",
-        }}
-      ></div>
+      <div className="overflow-hidden">
+        <div
+          className="h-[70vh]  sm:h-[90vh] w-full bg-cover bg-no-repeat brightness-[.3]  scaleInOut"
+          style={{
+            backgroundImage: `url(${step})`,
+            backgroundPosition: "center",
+          }}
+        ></div>
+      </div>
     </div>
   );
 };

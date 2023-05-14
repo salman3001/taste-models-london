@@ -8,6 +8,21 @@
     font-family: "Cardo", serif;
   }
 
+  body::-webkit-scrollbar {
+    width: 11px;
+  }
+  body {
+    scrollbar-width: thin;
+    scrollbar-color: red green;
+  }
+  body::-webkit-scrollbar-track {
+    background: #141a1c;
+  }
+  body::-webkit-scrollbar-thumb {
+    background-color: #bfa37c;
+    border-radius: 6px;
+  }
+
   a {
     @apply uppercase text-base hover:text-primary selection:text-primary;
   }
