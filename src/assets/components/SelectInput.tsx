@@ -30,6 +30,7 @@ const SelectInput = (prop: Iprop) => {
   console.log(prop.value);
 
   return (
+<<<<<<< HEAD
     <div
       className="relative text-base w-full uppercase"
       tabIndex={prop.tabindex}
@@ -42,6 +43,16 @@ const SelectInput = (prop: Iprop) => {
         onClick={() => {
           setState((state) => !state);
         }}
+=======
+    <div className="relative border-b ">
+      <select
+        name={prop.name}
+        id=""
+        className=" w-full h-full appearance-none bg-transparent p-2 pr-6 text-lg uppercase [&>option]:bg-base1 [&>option]:p-4 "
+        placeholder="model type"
+        value={prop.value}
+        onChange={prop.onchange}
+>>>>>>> 38a2ce6f09e8af035760c8df617fdc89cfa134c4
       >
         {prop.value === undefined
           ? prop.placeholder

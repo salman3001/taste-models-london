@@ -5,19 +5,19 @@ const BlogCard = () => {
   const navigate = useNavigate();
   return (
     <div
-      className="w-full max-w-sm space-y-3 cursor-pointer"
+      className="w-full  space-y-3 cursor-pointer"
       onClick={() => {
         navigate("/blogs/blogdetail");
       }}
     >
-      <div>
-        <img src={blogimg} alt="" />
+      <div className="flex">
+        <img src={blogimg} alt="" className="w-full" />
       </div>
       <p className="uppercase text-primary">Lorem Ipsum</p>
       <p className="text-3xl ">
         Lorem Ipsum is simply dummy text simply dummy text
       </p>
-      <p className="max-w-[20rem]">
+      <p className="">
         At vero eos et accusamus et iusto odio dignissimos ducimus qui
         blanditiis praesentium voluptatum deleniti atque corrupti quos dolores
         et quas molestias excepturi sint occaecati cupiditate non provident

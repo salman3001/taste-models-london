@@ -9,11 +9,11 @@ import { BsArrowRightShort } from "react-icons/bs";
 
 export const Section6 = () => {
   return (
-    <div className="padding-1 padding-2 w-full">
-      <h1 className="text-4xl font-light max-w-[30.6rem]">
+    <div className="padding-1 padding-2 pb-0 w-full">
+      <h1 className="text-4xl font-light max-w-[28.6rem]">
         Lorem Ipsum is simply dummy text of the printing text of the printing
       </h1>
-      <div className="padding-2 px-6 ">
+      <div className="padding-2 md:px-6 ">
         <Swiper
           style={{ height: "100%" }}
           slidesPerView={3}
@@ -51,7 +51,6 @@ export const Section6 = () => {
           <SwiperSlide>
             <Card />
           </SwiperSlide>
-
           <Bullets />
         </Swiper>
       </div>
@@ -61,7 +60,7 @@ export const Section6 = () => {
 
 const Card = () => {
   return (
-    <div className="space-y-4 p-10 border-l border-[#21272D]">
+    <div className="space-y-4 p-4 lg:p-10 border-l border-[#21272D]">
       <p className="text-xl font-semibold"> Lorem Ipsum</p>
       <Rating rating={4} />
       <p className="max-w-[20rem] text-lg">
@@ -84,7 +83,7 @@ const Bullets = () => {
   }, [swiper]);
 
   return (
-    <div className="flex justify-center items-center gap-8 mt-6 h-4">
+    <div className="flex justify-center items-center gap-8 mt-10 h-4">
       {activeSlide === 0 ? (
         <div className="h-2 w-2 text-3xl leading-[.4rem] font-thin scaleIn">
           +

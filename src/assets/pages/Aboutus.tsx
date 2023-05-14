@@ -14,7 +14,7 @@ const Aboutus = () => {
       <Section3 />
       <AboutusSection3 />
       <AboutUsSection4 />
-      <AboutUsSection5 />
+      <AboutUsSection5 bg=" bg-base2" />
       <AboutusSection6 />
     </>
   );

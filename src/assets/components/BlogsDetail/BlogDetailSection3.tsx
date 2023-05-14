@@ -1,8 +1,8 @@
 const BlogDetailSection3 = () => {
   return (
-    <div className="padding-1 padding-2 pt-10 space-y-8">
-      <div className="space-y-4">
-        <h1 className="text-[2.5rem] max-w-7xl leading-[3rem]">
+    <div className="padding-1 padding-2 pt-10 md:pt-16 space-y-8">
+      <div className="space-y-6">
+        <h1 className="text-[2.5rem] max-w-7xl leading-[3rem] pb-2">
           Section 1.10.33 of "de Finibus Bonorum et Malorum", written by Cicero
           in 45 BC written by Cicero in 45 BC
         </h1>
@@ -37,8 +37,8 @@ const BlogDetailSection3 = () => {
           asperiores repellat.
         </p>
       </div>
-      <div className="space-y-4">
-        <h1 className="text-[2.5rem] max-w-7xl leading-[3rem]">
+      <div className="space-y-6">
+        <h1 className="text-[2.5rem] max-w-7xl leading-[3rem] pb-2">
           Section 1.10.33 of
         </h1>
         <p className="text-lg text-justify">
@@ -66,8 +66,8 @@ const BlogDetailSection3 = () => {
           cumque nihil impedit quo minus id quod maxime
         </p>
       </div>
-      <div className="space-y-4">
-        <h1 className="text-[2.5rem] max-w-7xl leading-[3rem]">
+      <div className="space-y-6">
+        <h1 className="text-[2.5rem] max-w-7xl leading-[3rem] pb-2">
           Section 1.10.33 of
         </h1>
 

@@ -4,7 +4,7 @@ import Section7 from "../components/home/Section7";
 const Faq = () => {
   return (
     <>
-      <AboutUsSection5 />
+      <AboutUsSection5 bg=" bg-base2" />
       <Section7 />
     </>
   );

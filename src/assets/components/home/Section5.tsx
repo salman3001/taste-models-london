@@ -8,8 +8,8 @@ export const Section5 = () => {
   const { ref, inView } = useInView({ triggerOnce: true });
 
   return (
-    <div className="padding-1 padding-2 pl-4 md:pl-0 grid md:grid-cols-2 gap-8">
-      <div className="flex gap-4 md:gap-8">
+    <div className="padding-1 padding-2 pl-4 md:pl-0 grid md:grid-cols-2 gap-16 bg-base1">
+      <div className="flex gap-8 md:gap-12">
         <div
           ref={ref}
           className={`${inView && "animate-heightZeroToFull"} overflow-hidden`}

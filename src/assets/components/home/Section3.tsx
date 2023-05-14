@@ -3,7 +3,7 @@ import girl2 from "../../images/girl-slide-2.png";
 const Section3 = () => {
   return (
     <div className=" bg-base1">
-      <div className=" sm:space-y-5 border-b border-[#21272D]  padding-1 padding-2 ">
+      <div className=" sm:space-y-5 border-b border-[#21272D]  padding-1 py-10 md:py-16 lg:py-20 xl:py-24 ">
         <h1 className="text-4xl font-light max-w-[30.7rem]">
           Lorem Ipsum is simply dummy text of the printing
         </h1>
@@ -41,7 +41,7 @@ const Section3 = () => {
           </p>
         </div>
       </div>
-      <div className="padding-1 w-full py-6">
+      <div className="padding-1 w-full py-10 md:py-14 lg:py-16 xl:py-20 xl:pb-28">
         <img src={girl2} alt="" className="w-full" />
       </div>
     </div>

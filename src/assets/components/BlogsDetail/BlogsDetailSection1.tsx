@@ -4,10 +4,10 @@ import insta from "../../images/insta.svg";
 
 const BlogsDetailSection1 = () => {
   return (
-    <div className="padding-1 padding-2 pb-8 grid sm:grid-cols-4 gap-6">
+    <div className="padding-1 padding-2 grid sm:grid-cols-4 gap-6 pb-16">
       <div className="col-span-3 space-y-3">
         <p className="text-primary uppercase">Lorem Ipsum</p>
-        <h1 className="text-5xl">
+        <h1 className="text-5xl max-w-3xl font-bold">
           Lorem Ipsum is simply dummy text simply dummy text
         </h1>
       </div>

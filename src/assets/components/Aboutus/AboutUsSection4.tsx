@@ -35,7 +35,7 @@ const AboutUsSection4 = () => {
           since the 1500s, when an unknown printer took a
         </p>
         <button
-          className="btn btn-primary max-w-[9.25rem]"
+          className="btn btn-primary max-w-[11.25rem]"
           onClick={() => {
             navigate("/models");
           }}

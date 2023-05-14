@@ -7,7 +7,7 @@ import insta from "../images/insta.svg";
 const Footer = () => {
   return (
     <div className=" bg-base1 text-white">
-      <div className=" padding-1 flex flex-col gap-4 sm:flex-row w-full justify-evenly  py-5 md:py-8 lg:py-10  border-b border-[#21272D]">
+      <div className=" padding-1 flex flex-col gap-4 sm:flex-row w-full justify-evenly  py-10 md:py-14 lg:py-16  border-b border-[#21272D]">
         <div className="flex gap-6 items-center">
           <div>
             <img src={headphone} alt="" className="max-w-[3rem] h-auto" />
@@ -27,13 +27,13 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="padding-1 flex flex-col gap-6 sm:flex-row w-full border-b py-7 md:py-9 lg:py-12 border-[#21272D]">
+      <div className="padding-1 flex flex-col gap-6 sm:flex-row w-full border-b py-9 md:py-9 lg:py-12 border-[#21272D]">
         <div className="sm:w-1/2">
-          <div className="max-w-[18rem] space-y-4">
+          <div className="max-w-[18rem] space-y-6">
             <div className=" ">
               <img src={logo} alt="" className="w-full" />
             </div>
-            <p>
+            <p className="text-justify">
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been{" "}
             </p>
@@ -42,17 +42,19 @@ const Footer = () => {
               <span>:</span>
               <span>+12 12345 6789</span>
             </p>
-            <p className="text-[0.8rem]">Follow us</p>
-            <div className="flex gap-6">
-              <a href="">
-                <img src={fb} alt="" className="h-6" />
-              </a>
-              <a href="">
-                <img src={pintrest} alt="" className="h-6" />
-              </a>
-              <a href="">
-                <img src={insta} alt="" className="h-6" />
-              </a>
+            <div className="space-y-3">
+              <p className="text-[0.8rem]">Follow us</p>
+              <div className="flex gap-6">
+                <a href="">
+                  <img src={fb} alt="" className="h-6" />
+                </a>
+                <a href="">
+                  <img src={pintrest} alt="" className="h-6" />
+                </a>
+                <a href="">
+                  <img src={insta} alt="" className="h-6" />
+                </a>
+              </div>
             </div>
           </div>
         </div>

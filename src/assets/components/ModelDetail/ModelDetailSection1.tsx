@@ -19,43 +19,43 @@ const ModelDetailSection1 = () => {
   };
 
   return (
-    <div className=" padding-1 padding-2 pt-10 grid md:grid-cols-2 gap-8">
-      <div className="grid grid-cols-2 gap-4 place-items-center">
-        <div>
+    <div className=" padding-1 padding-2 pt-10 grid md:grid-cols-2 gap-14">
+      <div className="grid grid-cols-2 gap-6 ">
+        <div className="flex">
           <img
             src={carolina1}
             alt=""
-            className="cursor-pointer"
+            className="cursor-pointer "
             onClick={() => {
               togelLightBox(carolina1);
             }}
           />
         </div>
-        <div>
+        <div className="flex">
           <img
             src={carolina2}
             alt=""
-            className="cursor-pointer"
+            className="cursor-pointer "
             onClick={() => {
               togelLightBox(carolina2);
             }}
           />
         </div>
-        <div>
+        <div className="flex">
           <img
             src={carolina3}
             alt=""
-            className="cursor-pointer"
+            className="cursor-pointer "
             onClick={() => {
               togelLightBox(carolina3);
             }}
           />
         </div>
-        <div>
+        <div className="flex">
           <img
             src={carolina4}
             alt=""
-            className="cursor-pointer"
+            className="cursor-pointer  flex"
             onClick={() => {
               togelLightBox(carolina4);
             }}
@@ -65,19 +65,19 @@ const ModelDetailSection1 = () => {
           <img
             src={carolina5}
             alt=""
-            className="cursor-pointer"
+            className="cursor-pointer "
             onClick={() => {
               togelLightBox(carolina5);
             }}
           />
         </div>
       </div>
-      <div className="space-y-6">
-        <button className="btn btn-primary font-semibold text-lg  w-full [&>svg]:right-3">
+      <div className="space-y-8">
+        <button className="btn btn-primary font-semibold text-lg w-full lg:max-w-xl [&>svg]:right-3">
           Book Caroline now
           <BsArrowRight size={25} />
         </button>
-        <div className="max-w-sm">
+        <div className="max-w-sm space-y-3">
           <p className="text-2xl">Caroline</p>
           <Rating rating={5} />
           <p className="text-muted">
@@ -133,7 +133,7 @@ const ModelDetailSection1 = () => {
           <div className="w-full border-b border-[#21272D]"></div>
         </div>
         <div>
-          <p className="text-[#7E8283]">
+          <p className="text-[#7E8283] max-w-md">
             Viverra accumsan in nisl scelerisque nisi. At risus viverra
             adipiscing at in tellus. Integer neq ualiquam vestibulum en morbi
             blandit cursi us risus ultrices ataugue ut lectus arcu sed done.

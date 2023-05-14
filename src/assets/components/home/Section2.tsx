@@ -27,7 +27,7 @@ const Section2 = () => {
           </div>
         </div>
       </div>
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
         <ModelCard
           img={model1}
           name="Lara"
