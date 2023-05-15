@@ -2,7 +2,7 @@ const FormInput = (prop: {
   name: string;
   label: string;
   value: string | number;
-  type: "text" | "number";
+  type: "text" | "number" | "password";
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   onChange: any;
   error?: boolean;

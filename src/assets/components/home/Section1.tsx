@@ -89,9 +89,6 @@ const Form = memo(() => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  console.log(formik.isValid);
-  console.log(formik.errors);
-
   return (
     <>
       <div className="grid grid-cols-2 sm:grid-cols-4 w-full gap-10 uppercase">

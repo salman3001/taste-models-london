@@ -3,11 +3,21 @@ import { BsArrowRightShort } from "react-icons/bs";
 import { CgMenuRightAlt } from "react-icons/cg";
 import { RxCross1 } from "react-icons/rx";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
+import { IContent, IUser } from "./Types";
+import { Avatar } from "flowbite-react";
+import { Dropdown } from "flowbite-react";
+import { useSelector, useDispatch } from "react-redux";
+import { RootState } from "../../Redux/store";
+import { removeUser } from "../../Redux/userSlice";
 
-const Navbar = (prop: { modalTogel: () => void }) => {
+const Navbar = (prop: { modalTogel: (content: IContent) => void }) => {
   const [menuState, setMenuState] = useState(false);
   const navigate = useNavigate();
+  const { pathname } = useLocation();
+  const user = useSelector((state: RootState) => state.user);
+  const dispatch = useDispatch();
+
   return (
     <>
       <nav className="fixed h-[10vh] bg-base1 text-white flex justify-between items-center px-4 md:px-6 lg:px-12 xl:px-16 z-30 w-full -top-1">
@@ -21,10 +31,10 @@ const Navbar = (prop: { modalTogel: () => void }) => {
             }}
           />
         </div>
-        <div className="hidden md:flex items-center gap-10 lg:gap-16 ">
+        <div className="hidden lg:flex items-center gap-10 xl:gap-16 ">
           <a
             href=""
-            className="[&[href='/models']]:text-primary"
+            className={`${pathname === "/models" && "text-primary"}`}
             onClick={(e) => {
               e.preventDefault();
               navigate("/models");
@@ -34,7 +44,7 @@ const Navbar = (prop: { modalTogel: () => void }) => {
           </a>
           <a
             href=""
-            className="[&[href='/aboutus']]:text-primary"
+            className={`${pathname === "/aboutus" && "text-primary"}`}
             onClick={(e) => {
               e.preventDefault();
               navigate("/aboutus");
@@ -44,7 +54,7 @@ const Navbar = (prop: { modalTogel: () => void }) => {
           </a>
           <a
             href=""
-            className="[&[href='/blogs']]:text-primary"
+            className={`${pathname === "/blogs" && "text-primary"}`}
             onClick={(e) => {
               e.preventDefault();
               navigate("/blogs");
@@ -54,7 +64,7 @@ const Navbar = (prop: { modalTogel: () => void }) => {
           </a>
           <a
             href=""
-            className="[&[href='/faq']]:text-primary"
+            className={`${pathname === "/faq" && "text-primary"}`}
             onClick={(e) => {
               e.preventDefault();
               navigate("/faq");
@@ -64,25 +74,57 @@ const Navbar = (prop: { modalTogel: () => void }) => {
           </a>
           <a
             href=""
-            className="[&[href='/members']]:text-primary"
+            className={`${pathname === "/joinus" && "text-primary"}`}
             onClick={(e) => {
               e.preventDefault();
-              navigate("/members");
+              navigate("/joinus");
+            }}
+          >
+            Join us
+          </a>
+          <a
+            href=""
+            className={`${pathname === "/members" && "text-primary"}`}
+            onClick={(e) => {
+              e.preventDefault();
+              prop.modalTogel("LoginForm");
             }}
           >
             Members
           </a>
+
+          {/* avatar */}
+          {user.url !== "" && (
+            <Dropdown
+              label={
+                <Avatar alt="User settings" img={user.url} rounded={true} />
+              }
+              arrowIcon={false}
+              inline={true}
+              className="bg-gray-950 border-none text-white"
+            >
+              <Dropdown.Item
+                className="text-white hover:bg-primary"
+                onClick={() => {
+                  dispatch(removeUser());
+                }}
+              >
+                Sign out
+              </Dropdown.Item>
+            </Dropdown>
+          )}
+
           <button
             className="btn btn-primary"
             onClick={() => {
               navigate("/models");
-              prop.modalTogel();
+              prop.modalTogel("bookModelForm");
             }}
           >
             Book Model <BsArrowRightShort size={"1.75rem"} />
           </button>
         </div>
-        <div className="md:hidden hover:text-primary ">
+        <div className="lg:hidden hover:text-primary ">
           {!menuState ? (
             <CgMenuRightAlt
               onClick={() => {
@@ -106,9 +148,9 @@ const Navbar = (prop: { modalTogel: () => void }) => {
       <nav
         className={`${
           menuState ? "h-max p-10 border-b" : "h-0"
-        } fixed bg-base2 text-white flex flex-col justify-between items-start md:hidden overflow-hidden transition-all duration-500 ease-out z-30 w-full mt-[10vh] -top-1 bg-opacity-95`}
+        } fixed bg-base2 text-white flex flex-col justify-between items-start lg:hidden overflow-hidden transition-all duration-500 ease-out z-30 w-full mt-[10vh] -top-1 bg-opacity-95`}
       >
-        <div className="flex flex-col md:hidden items-start gap-5 lg:gap-12">
+        <div className="flex flex-col lg:hidden items-start gap-5 lg:gap-12">
           <a
             href=""
             className="[&[href='/models']]:text-primary"
@@ -159,7 +201,19 @@ const Navbar = (prop: { modalTogel: () => void }) => {
             className=""
             onClick={(e) => {
               e.preventDefault();
-              navigate("/members");
+              navigate("/joinus");
+              setMenuState(false);
+            }}
+          >
+            Join us
+          </a>
+          <a
+            href=""
+            className=""
+            onClick={(e) => {
+              e.preventDefault();
+              prop.modalTogel("LoginForm");
+              setMenuState(false);
             }}
           >
             Members
@@ -170,7 +224,7 @@ const Navbar = (prop: { modalTogel: () => void }) => {
               e.preventDefault();
               navigate("/models");
               setMenuState(false);
-              prop.modalTogel();
+              prop.modalTogel("bookModelForm");
             }}
           >
             Book Model <BsArrowRightShort size={"1.75rem"} />
