@@ -5,9 +5,11 @@ import SelectInput from "./SelectInput";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useState, useEffect } from "react";
-import { IContent } from "./Types";
+import { useDispatch } from "react-redux";
 
-const BookModelForm = (prop: { togelHandler: (content: IContent) => void }) => {
+import { togelModalState } from "../../Redux/modalSlice";
+
+const BookModelForm = () => {
   const [success, setSuccess] = useState(false);
 
   const togelSuccess = () => {
@@ -20,21 +22,16 @@ const BookModelForm = (prop: { togelHandler: (content: IContent) => void }) => {
 
   return (
     <div className=" px-4 sm:px-8 md:px-16 py-16">
-      {success ? (
-        <SuccessMessage togelHandler={prop.togelHandler} />
-      ) : (
-        <Form togelHandler={prop.togelHandler} setSuccess={togelSuccess} />
-      )}
+      {success ? <SuccessMessage /> : <Form setSuccess={togelSuccess} />}
     </div>
   );
 };
 
 export default BookModelForm;
 
-const Form = (prop: {
-  togelHandler: (conten: IContent) => void;
-  setSuccess: () => void;
-}) => {
+const Form = (prop: { setSuccess: () => void }) => {
+  const dispatch = useDispatch();
+
   const formik = useFormik({
     initialValues: {
       model: "Caroline",
@@ -152,7 +149,7 @@ const Form = (prop: {
         <button
           className="btn border w-full hover:bg-primary self-end transition-opacity duration-1000 text-white text-xl"
           onClick={() => {
-            prop.togelHandler("bookModelForm");
+            dispatch(togelModalState("bookModelForm"));
             formik.resetForm();
           }}
         >
@@ -174,9 +171,9 @@ const Form = (prop: {
   );
 };
 
-const SuccessMessage = (prop: {
-  togelHandler: (content: IContent) => void;
-}) => {
+const SuccessMessage = () => {
+  const dispatch = useDispatch();
+
   return (
     <div className="flex flex-col items-center gap-8">
       <div>
@@ -191,7 +188,7 @@ const SuccessMessage = (prop: {
         type="submit"
         className="btn  btn-primary w-full  self-end transition-opacity duration-1000 text-white"
         onClick={() => {
-          prop.togelHandler("bookModelForm");
+          dispatch(togelModalState("bookModelForm"));
         }}
       >
         Go Back

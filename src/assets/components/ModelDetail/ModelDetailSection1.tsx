@@ -12,10 +12,13 @@ import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import "yet-another-react-lightbox/styles.css";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
+import { useDispatch } from "react-redux";
+import { togelModalState } from "../../../Redux/modalSlice";
 
 const ModelDetailSection1 = () => {
   const [lightbox, setLightbox] = useState(false);
   const [defaultImage, setDefaultImage] = useState(0);
+  const dispatch = useDispatch();
 
   const togelLightBox = () => {
     setLightbox((state) => !state);
@@ -81,7 +84,12 @@ const ModelDetailSection1 = () => {
         </div>
       </div>
       <div className="space-y-8">
-        <button className="btn btn-primary font-semibold text-lg w-full lg:max-w-xl [&>svg]:right-3">
+        <button
+          className="btn btn-primary font-semibold text-lg w-full lg:max-w-xl [&>svg]:right-3"
+          onClick={() => {
+            dispatch(togelModalState("bookModelForm"));
+          }}
+        >
           Book Caroline now
           <BsArrowRight size={25} />
         </button>

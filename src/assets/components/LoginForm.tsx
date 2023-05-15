@@ -6,9 +6,9 @@ import * as Yup from "yup";
 import dp from "../images/temp-profile-pic.jpeg";
 import { useDispatch } from "react-redux";
 import { setUser } from "../../Redux/userSlice";
-import { IContent } from "./Types";
+import { togelModalState } from "../../Redux/modalSlice";
 
-const LoginForm = (prop: { togelModal: (content: IContent) => void }) => {
+const LoginForm = () => {
   const dispatch = useDispatch();
   const formik = useFormik({
     initialValues: {
@@ -65,7 +65,7 @@ const LoginForm = (prop: { togelModal: (content: IContent) => void }) => {
             onClick={(e) => {
               e.preventDefault();
               formik.handleSubmit();
-              prop.togelModal("bookModelForm");
+              dispatch(togelModalState("bookModelForm"));
             }}
           >
             Login

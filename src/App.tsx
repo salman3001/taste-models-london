@@ -8,6 +8,7 @@ import Models from "./assets/pages/Models";
 import ModelDetail from "./assets/pages/ModelDetail";
 import Blogs from "./assets/pages/Blogs";
 import BlogsDetail from "./assets/pages/BlogsDetail";
+import Joinus from "./assets/pages/Joinus";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/aboutus" element={<Aboutus />} />
         <Route path="/faq" element={<Faq />} />
+        <Route path="/joinus" element={<Joinus />} />
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/blogs/:blogId" element={<BlogsDetail />} />
         <Route path="/models" element={<Models />} />

@@ -4,7 +4,7 @@ import { Outlet } from "react-router-dom";
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import useScrollPercentage from "react-scroll-percentage-hook";
-import { LegacyRef, useState } from "react";
+import { useState } from "react";
 import Modal from "./Modal";
 import { IContent } from "./Types";
 
@@ -18,17 +18,13 @@ const Layout = () => {
   };
   return (
     <div className="flex relative flex-col min-h-screen justify-between text-white">
-      <Navbar modalTogel={modalTogel} />
+      <Navbar />
       <div className="grow bg-base2 text-white mt-[10vh]">
         <Outlet />
       </div>
       <Footer />
       <Topbtn />
-      <Modal
-        state={modalState}
-        togelHandler={modalTogel}
-        content={modalContent}
-      />
+      <Modal />
     </div>
   );
 };
