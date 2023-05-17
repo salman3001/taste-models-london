@@ -1,13 +1,54 @@
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, DragEvent, useEffect, useState } from "react";
 import { RxCross2 } from "react-icons/rx";
 
 const ImageUploader = () => {
   const [fileList, setFileList] = useState<File[]>();
+  const [dragActive, setDragActive] = useState(false);
+
   const [error, setError] = useState<{ error: boolean; message: string }>({
     error: false,
     message: "",
   });
   const maxLength = 5;
+
+  const handleDragEnter = function (e: DragEvent<HTMLDivElement>) {
+    setDragActive(true);
+  };
+
+  const handleDragLeave = function () {
+    setDragActive(false);
+  };
+
+  const handleDrop = function (e: DragEvent<HTMLDivElement>) {
+    e.preventDefault();
+    e.stopPropagation();
+    setDragActive(false);
+
+    setError({
+      error: false,
+      message: "",
+    });
+
+    setFileList([]);
+
+    const fileList = e.dataTransfer.files;
+    if (validateFileType(fileList)) {
+      if (validateMaxLength(fileList)) {
+        const files = GetFileList(fileList);
+        setFileList(files);
+      } else {
+        setError({
+          error: true,
+          message: `Maximum ${maxLength} images are accepted`,
+        });
+      }
+    } else {
+      setError({
+        error: true,
+        message: "Only png,jpg, jpeg format accepted!",
+      });
+    }
+  };
 
   const validateFileType = (files: FileList) => {
     let valid = true;
@@ -83,6 +124,42 @@ const ImageUploader = () => {
     setFileList(newFileList);
   };
 
+  useEffect(() => {
+    window.addEventListener(
+      "dragover",
+      function (e) {
+        e.preventDefault();
+      },
+      false
+    );
+    window.addEventListener(
+      "drop",
+      function (e) {
+        e = e || event;
+        e.preventDefault();
+      },
+      false
+    );
+
+    return () => {
+      window.removeEventListener(
+        "dragover",
+        function (e) {
+          e.preventDefault();
+        },
+        false
+      );
+      window.removeEventListener(
+        "drop",
+        function (e) {
+          e = e || event;
+          e.preventDefault();
+        },
+        false
+      );
+    };
+  }, []);
+
   return (
     <div className="space-y-6">
       <div>
@@ -97,7 +174,14 @@ const ImageUploader = () => {
           ))}
         </div>
       </div>
-      <div className="padding-1 padding-2 border-2 border-[#21272D] border-dashed">
+      <div
+        className={`padding-1 padding-2 border-2 border-dashed ${
+          dragActive ? "border-primary" : "border-[#21272D]"
+        }`}
+        onDragOver={handleDragEnter}
+        onDragLeave={handleDragLeave}
+        onDrop={handleDrop}
+      >
         <div className="max-w-xl mx-auto space-y-4">
           <p className="text-xl text-[#7E8283] text-center">
             Drop Your images here
