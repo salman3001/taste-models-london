@@ -5,7 +5,7 @@
 @layer components {
   html {
     @apply text-[13px] md:text-[14px] lg:text-[15[x]] xl:text-[16px] scroll-smooth;
-    font-family: "Epilogue", serif;
+    font-family: "Cardo", serif;
   }
 
   body {
@@ -68,7 +68,6 @@
   p {
     @apply text-sm;
     font-family: "Cardo", serif;
-    font-family: "Epilogue", sans-serif;
   }
 
   option:checked,

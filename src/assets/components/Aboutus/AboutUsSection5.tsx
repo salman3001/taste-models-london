@@ -3,7 +3,7 @@ import Accordian from "../Accordian";
 const AboutUsSection5 = (prop: { bg: string }) => {
   return (
     <div className={`"bg-base1 padding-1 padding-2 ${prop.bg}"`}>
-      <div className="space-y-4 border-b border-[#21272D] ">
+      <div className="space-y-4 border-b border-[#21272D] py-6">
         <h1 className="text-4xl font-light">Frequently Asked Questions</h1>
         <p className="uppercase text-primary">Lorem Ipsum</p>
       </div>

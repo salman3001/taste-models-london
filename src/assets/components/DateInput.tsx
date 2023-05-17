@@ -12,13 +12,13 @@ const options = {
   maxDate: new Date("2050-01-01"),
   minDate: Date.now(),
   theme: {
-    background: "bg-base1 w-[80vw] sm:w-auto ",
+    background: "bg-base1  ",
     todayBtn:
       "h-8 bg-primary text-white ring-0 focus:ring-0 hover:ring-0 hover:bg-primary border-none ",
     clearBtn:
       "h-8 bg-primary text-white ring-0 focus:ring-0 hover:ring-0 hover:bg-primary border-none ",
     icons:
-      "rounded-sm p-2 bg-transparent hover:bg-primary ring-0 focus:ring-0 text-white hover:text-white",
+      " rounded-sm p-2 bg-transparent hover:bg-primary ring-0 focus:ring-0 text-white hover:text-white",
     text: "bg-base1 text-white hover:bg-primary rounded-sm",
     disabledText: "hover:bg-primary rounded-sm",
     input:

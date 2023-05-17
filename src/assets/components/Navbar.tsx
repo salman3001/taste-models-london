@@ -141,7 +141,7 @@ const Navbar = () => {
       <nav
         className={`${
           menuState ? "h-max p-10 border-b" : "h-0"
-        } fixed bg-base2 text-white flex flex-col justify-between items-start lg:hidden overflow-hidden transition-all duration-500 ease-out z-20 w-full mt-[10vh] -top-1 bg-opacity-95`}
+        } fixed bg-base2 text-white flex flex-col justify-between items-start lg:hidden overflow-hidden transition-all duration-500 ease-out z-[40] w-full mt-[10vh] -top-1 bg-opacity-95`}
       >
         <div className="flex flex-col lg:hidden items-start gap-5 lg:gap-12">
           <a
