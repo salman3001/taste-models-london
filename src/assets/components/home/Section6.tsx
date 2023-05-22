@@ -13,7 +13,7 @@ export const Section6 = () => {
       <h1 className="text-4xl font-light max-w-[28.6rem]">
         Lorem Ipsum is simply dummy text of the printing text of the printing
       </h1>
-      <div className="padding-2 px-6 ">
+      <div className="padding-2 md:px-6 ">
         <Swiper
           style={{ height: "100%" }}
           slidesPerView={3}
@@ -83,7 +83,7 @@ const Bullets = () => {
   }, [swiper]);
 
   return (
-    <div className="flex justify-center items-center gap-8 mt-6 h-4">
+    <div className="flex justify-center items-center gap-8 mt-10 h-4">
       {activeSlide === 0 ? (
         <div className="h-2 w-2 text-3xl leading-[.4rem] font-thin scaleIn">
           +

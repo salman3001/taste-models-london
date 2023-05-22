@@ -7,7 +7,7 @@ import model3 from "../images/model-3.png";
 const Models = () => {
   return (
     <div className="z-20 padding-1 padding-2">
-      <div className=" text-5xl w-full h-full flex flex-col justify-end  gap-10">
+      <div className=" text-5xl w-full h-full flex flex-col justify-end  gap-10 pb-4">
         <h1 className="max-w-lg ">Lorem Ipsum is simply dummy text</h1>
         <p className="max-w-lg text-lg">
           Lorem Ipsum is simply dummy text of the printing and typesetting

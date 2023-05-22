@@ -33,7 +33,7 @@ const Footer = () => {
             <div className=" ">
               <img src={logo} alt="" className="w-full" />
             </div>
-            <p>
+            <p className="text-justify">
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been{" "}
             </p>
@@ -42,17 +42,19 @@ const Footer = () => {
               <span>:</span>
               <span>+12 12345 6789</span>
             </p>
-            <p className="text-[0.8rem]">Follow us</p>
-            <div className="flex gap-6">
-              <a href="">
-                <img src={fb} alt="" className="h-6" />
-              </a>
-              <a href="">
-                <img src={pintrest} alt="" className="h-6" />
-              </a>
-              <a href="">
-                <img src={insta} alt="" className="h-6" />
-              </a>
+            <div className="space-y-3">
+              <p className="text-[0.8rem]">Follow us</p>
+              <div className="flex gap-6">
+                <a href="">
+                  <img src={fb} alt="" className="h-6" />
+                </a>
+                <a href="">
+                  <img src={pintrest} alt="" className="h-6" />
+                </a>
+                <a href="">
+                  <img src={insta} alt="" className="h-6" />
+                </a>
+              </div>
             </div>
           </div>
         </div>

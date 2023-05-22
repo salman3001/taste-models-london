@@ -2,7 +2,7 @@ import girl3 from "../../images/girl-slide-3.png";
 const Section7 = () => {
   return (
     <div
-      className="w-full min-h-[40vh] bg-cover bg-center padding-1 padding-2 brightness-85"
+      className="w-full min-h-[40vh] bg-cover bg-center padding-1 padding-2 brightness-90"
       style={{
         backgroundImage: `url(${girl3})`,
       }}

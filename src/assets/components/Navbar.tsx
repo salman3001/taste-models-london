@@ -94,8 +94,8 @@ const Navbar = () => {
       {/* dropbar */}
       <nav
         className={`${
-          menuState ? "h-[24rem] p-10" : "h-0"
-        } bg-base2 text-white flex flex-col justify-between items-start md:hidden overflow-hidden transition-all duration-500 ease-out`}
+          menuState ? "h-[19rem] p-10 border-b" : "h-0"
+        } bg-base2 text-white flex flex-col justify-between items-start md:hidden overflow-hidden transition-all duration-500 ease-out `}
       >
         <div className="flex flex-col md:hidden items-start gap-5 lg:gap-12">
           <a
