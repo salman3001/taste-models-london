@@ -1,4 +1,3 @@
-import { memo, useState } from "react";
 import ModelCard from "../components/ModelCard";
 import SelectInput from "../components/SelectInput";
 import model1 from "../images/model-1.png";
@@ -14,11 +13,48 @@ const Models = () => {
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry.
         </p>
-        <div className="w-full  lg:w-[80%] 2xl:w-[70%] self-end">
-          <Form />
+        <div className="w-full  lg:w-[90%] 2xl:w-[80%] self-end">
+          <div className="grid grid-cols-2 sm:grid-cols-4 w-full gap-10">
+            <SelectInput
+              option={[
+                { title: "Model 1", value: "model1" },
+                { title: "Model 2", value: "model2" },
+                { title: "Model 3", value: "model3" },
+              ]}
+              name="ModelType"
+              placeholder="Model Type"
+            />
+            <SelectInput
+              option={[
+                { title: "American", value: "American" },
+                { title: "French", value: "French" },
+                { title: "Canadian", value: "Canadian" },
+              ]}
+              name="Nationality"
+              placeholder="Nationality"
+            />
+            <SelectInput
+              option={[
+                { title: "Modeling", value: "Modeling" },
+                { title: "Photo Shoot", value: "Photoshoot" },
+                { title: "Video Shoot", value: "Videoshoot" },
+              ]}
+              name="Service"
+              placeholder="Service"
+            />
+            <SelectInput
+              option={[
+                { title: "English", value: "English" },
+                { title: "French", value: "French" },
+                { title: "Russian", value: "Russian" },
+              ]}
+              name="language"
+              placeholder="Language Spoken"
+            />
+          </div>
         </div>
       </div>
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 py-10">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-14 py-10 ">
         <ModelCard
           img={model1}
           name="Lara"
@@ -151,43 +187,3 @@ const Models = () => {
 };
 
 export default Models;
-
-const Form = memo(() => {
-  const [modelType, setModelType] = useState("");
-  const [nationality, setNationality] = useState("");
-  const [service, setService] = useState("");
-  const [language, setLanguage] = useState("");
-
-  return (
-    <div className="grid grid-cols-2 md:grid-cols-4 w-full gap-10">
-      <SelectInput
-        tabindex={0}
-        value={modelType}
-        onChange={setModelType}
-        placeholder="Model Type"
-        options={["Model1", "Model2", "Model3"]}
-      />
-      <SelectInput
-        tabindex={0}
-        value={nationality}
-        onChange={setNationality}
-        placeholder={"Nationality"}
-        options={["American", "Russian", "France"]}
-      />
-      <SelectInput
-        tabindex={0}
-        value={service}
-        onChange={setService}
-        placeholder={"Service"}
-        options={["Modeling", "Photoshoot", "Videoshoot"]}
-      />
-      <SelectInput
-        tabindex={0}
-        value={language}
-        onChange={setLanguage}
-        placeholder={"Language Spoken"}
-        options={["English", "Russian", "French"]}
-      />
-    </div>
-  );
-});

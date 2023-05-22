@@ -8,7 +8,7 @@ const Section4 = () => {
   const navigate = useNavigate();
   const { ref, inView } = useInView({ triggerOnce: true });
   return (
-    <div className="padding-1 padding-2 pr-4 md:pr-0 grid md:grid-cols-2 gap-8">
+    <div className="padding-1 padding-2 pr-4 md:pr-0 grid md:grid-cols-2 gap-16">
       <div className="flex flex-col h-full justify-center gap-8  max-w-lg">
         <div className="space-y-2">
           <h1 className="text-4xl font-light">
@@ -31,7 +31,7 @@ const Section4 = () => {
         </button>
       </div>
 
-      <div className="flex gap-4 md:gap-8">
+      <div className="flex gap-8 md:gap-12">
         <div
           ref={ref}
           className={`${inView && "animate-heightZeroToFull"} overflow-hidden`}

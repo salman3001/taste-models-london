@@ -13,11 +13,11 @@ interface Iprop {
 // eslint-disable-next-line react-refresh/only-export-components
 const SelectInput = (prop: Iprop) => {
   return (
-    <div className="relative border-b">
+    <div className="relative border-b ">
       <select
         name={prop.name}
         id=""
-        className=" w-full h-full appearance-none bg-transparent p-2 text-xl uppercase [&>option]:bg-base1 [&>option]:p-4 "
+        className=" w-full h-full appearance-none bg-transparent p-2 pr-6 text-lg uppercase [&>option]:bg-base1 [&>option]:p-4 "
         placeholder="model type"
         value={prop.value}
         onChange={prop.onchange}

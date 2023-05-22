@@ -72,12 +72,12 @@ const ModelDetailSection1 = () => {
           />
         </div>
       </div>
-      <div className="space-y-6">
+      <div className="space-y-8">
         <button className="btn btn-primary font-semibold text-lg  w-full [&>svg]:right-3">
           Book Caroline now
           <BsArrowRight size={25} />
         </button>
-        <div className="max-w-sm">
+        <div className="max-w-sm space-y-3">
           <p className="text-2xl">Caroline</p>
           <Rating rating={5} />
           <p className="text-muted">
@@ -133,7 +133,7 @@ const ModelDetailSection1 = () => {
           <div className="w-full border-b border-[#21272D]"></div>
         </div>
         <div>
-          <p className="text-[#7E8283]">
+          <p className="text-[#7E8283] max-w-md">
             Viverra accumsan in nisl scelerisque nisi. At risus viverra
             adipiscing at in tellus. Integer neq ualiquam vestibulum en morbi
             blandit cursi us risus ultrices ataugue ut lectus arcu sed done.

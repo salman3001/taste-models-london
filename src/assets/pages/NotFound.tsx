@@ -15,7 +15,7 @@ export const NotFound = () => {
   }, []);
 
   return (
-    <div className="text-primary text-center pt-16  text-xl">
+    <div className="text-primary text-center py-16  text-xl">
       Oops! the page your looking for is under maintenance <br />
       <span className="animate-pulse duration-500">
         Redirecting to home page
