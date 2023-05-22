@@ -43,7 +43,7 @@ const ModelCard = (prop: Iprop) => {
         </div>
       </div>
       <div className="flex flex-col justify-center w-full items-center gap-2">
-        <p className="text-xl">{prop.name}</p>
+        <p className="text-lg">{prop.name}</p>
         <Rating rating={prop.rating} />
       </div>
       <div className="absolute group-hover:opacity-0 bottom-28 fadeIn flex justify-center w-full transition-opacity duration-300 ">

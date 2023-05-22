@@ -19,14 +19,14 @@ const Layout = () => {
       </div>
       <Footer />
       <div
-        className={`fixed flex gap-2 hover:scale-125 justify-center items-center bottom-20 right-8 h-12 w-12 transition-all cursor-pointer duration-1000  ${
+        className={`fixed flex gap-2 hover:scale-125 justify-center items-center bottom-20 right-8 h-14 w-14 transition-all cursor-pointer duration-1000  ${
           percentage.vertical > 10 ? "opacity-100" : "opacity-0"
         } `}
         onClick={() => {
           window.scrollTo({ top: 0 });
         }}
       >
-        <p className="text-primary uppercase">Top</p>
+        <p className="text-primary uppercase text-lg">Top</p>
         <div className="relative">
           <CircularProgressbar value={percentage.vertical} />
           <div className="absolute w-1 h-1 rounded-full bg-primary top-1/2 -translate-y-1/2 right-1/2 translate-x-1/2"></div>

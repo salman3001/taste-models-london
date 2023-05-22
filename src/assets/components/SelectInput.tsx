@@ -1,4 +1,4 @@
-import { Dispatch, useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 import { BsChevronDown } from "react-icons/bs";
 import { memo } from "react";
 
@@ -7,7 +7,7 @@ interface Iprop {
   placeholder: string;
   option: { title: string; value: string }[];
   value?: string;
-  onchange?: () => void;
+  onchange?: Dispatch<SetStateAction<string>>;
 }
 
 // eslint-disable-next-line react-refresh/only-export-components
@@ -29,8 +29,8 @@ const SelectInput = (prop: Iprop) => {
           <option value={option.value}>{option.title}</option>
         ))}
       </select>
-      <div className="absolute right-0 top-1/2 -translate-y-1/2">
-        <BsChevronDown size={25} />
+      <div className="absolute right-0 top-[70%] -translate-y-[70%]">
+        <BsChevronDown size={20} />
       </div>
     </div>
   );
